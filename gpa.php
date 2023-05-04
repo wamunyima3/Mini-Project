@@ -20,18 +20,21 @@
                 <h4>Upload Results</h4>
                 <p><strong>Note:</strong>
                     <ul>
-                        <li>File can either be an excel or csv file. if you are not sure of what to do <a href="#"> download a template file</a></li>
+                        <li>File can either be an excel or csv file. if you are not sure of what to do, please <a href="#"> download a template file</a></li>
+                        <br>
                         <li>After you have selected your file, the contents of the file will be displayed on the page, verify before you click on upload because you wont be allowed to re-upload or make changes for security issues unless you contact an <a href="#">administrator</a>.</li>
+                        <br>
                         <li><a href="#">How GPA is calculated</a></li>
                     </ul>
                 </p>
-
+                <br>
                 <input type="file">
             </section>
         </div>
 
         <div class="main-content">
-            <h1>Program</h1> 
+            <h1>Program</h1>
+            
         </div>
     </main>
 </body>
