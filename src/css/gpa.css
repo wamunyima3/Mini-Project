@@ -24,6 +24,7 @@ main{
     border: none;
     overflow: hidden;
     margin-bottom: 40px;
+    margin-top: 30px;
 }
   
 #profile-picture img {
@@ -44,17 +45,19 @@ main{
 }
 
 .side-bar{
-    border: 1px solid #cfe8f6;
-    border-radius: 20px;
-    padding: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    padding: 10px;
+    border-right: 1px solid #cfe8f6;
     display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 20px; 
+    align-items: center;
+    flex-direction: column;
 }
 
-.results{
-    min-height: 100%;
-    border-left: 1px solid #cfe8f6;
+.main-content{
+    margin-left: 300px;
     padding: 0 20px;
 }
