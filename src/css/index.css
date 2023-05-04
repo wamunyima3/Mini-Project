@@ -1,0 +1,164 @@
+/* Problems to fix when i hover on the
+report button other navigation elements slightly
+move*/
+
+body{
+    margin: 0;
+    padding: 0px;
+    background-color: #1a1a2e;
+    color: #cfe8f6;
+    scroll-behavior: smooth;
+}
+
+/* Heading CSS */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 10%;
+}
+
+/* Navigation Links Css */
+.nav{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.nav a:hover{
+    color: aquamarine;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.nav a, .developers {
+    font-size: 20px;
+    color: #cfe8f6;
+    text-decoration: none;
+}
+
+/* Developers Button Css */
+.developers {
+    padding: 16px 25px;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    color: #1a1a2e;
+}
+
+.developers:hover{
+    color: aquamarine;
+    background-color: #1a1a2e;
+    border: solid aquamarine;
+    transition: all 0.3s ease 0s;
+    transform: scale(1.2);
+}
+
+/* Main Page Css */
+main{
+    min-height: 100%;
+    margin-top: 5rem;
+}
+/* Introductions */
+.intro{
+    display: flex;
+    height: fit-content;
+    justify-content: space-around;
+}
+
+.intro h2, .features h1 {
+    font-size: 50px;
+    width:400px;
+    margin-bottom: 10px;
+}
+
+.intro p, .features p{
+    width:350px;
+    margin-bottom: 60px;
+    line-height: 1.8;
+}
+
+.calculate{
+    padding: 20px 100px;
+    font-size: 25px;
+}
+
+.calculate:hover, .download:hover{
+    font-size: 30px;
+}
+
+.intro img, .features img{
+ height: 410px;
+ border-radius: 20px;
+}
+
+.intro img:hover, .features img:hover{
+    transform: scale(1.1); /* enlarge the image on hover */
+    transition: 0.5s ease-in-out;
+}
+
+.features .container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+}
+
+.download{
+    padding: 20px 70px;
+    font-size: 25px;
+}
+
+.features h1{
+    margin: 5rem 0px 60px 15rem;
+}
+
+/* Footer css */
+footer{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #cfe8f6;
+    margin-top: 45px;
+    height: 20vh;
+    padding: 30px 0px;
+}
+
+
+footer a {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 5px;;
+    transition: all 0.2s ease-in-out;
+    border-color: aquamarine;
+    background-color: #cfe8f6;
+}
+  
+footer a:hover {
+width: 42px;
+height: 42px;
+border-color: #cfe8f6;
+background-color: aquamarine;
+}
+
+footer a img {
+display: block;
+width: 100%;
+height: auto;
+transition: all 0.2s ease-in-out;
+}
+
+footer a:hover img {
+transform: scale(1.1);
+}
+
+footer p{
+    width: 300px;
+    line-height: 1.8;
+}
+/* Media Queries */

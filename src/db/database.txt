@@ -1,0 +1,135 @@
+BUSINESS RULES
+    * The system should allow users to upload student results in CSV or Excel format, which includes student numbers, student names, course IDs, and grades.
+    * The system should store the uploaded data in a MySQL database, with appropriate data validation and error handling to ensure data integrity.
+    * The system should calculate a graduation point system based on the grading scheme provided, where each grade corresponds to a certain number of points.
+    * The graduation point system should be used to determine the graduation remark (Distinction, Merit, Credit, Pass) for each student based on their total points.
+    * The graduation point system should be customizable by administrators to adjust the values associated with each grade.
+    * The system should generate reports showing each student's graduation remark, as well as summary statistics such as average points and the number of students in each remark category.
+    * The system should be secure, with appropriate measures taken to protect user data and prevent unauthorized access.
+    * The system should be scalable, able to handle large amounts of data and multiple users simultaneously.
+    * The system should have appropriate backup and recovery procedures in place to ensure that data is not lost in case of system failure or other issues.
+    * The system should have appropriate user roles and permissions to restrict access to sensitive data and functionality.
+    * The system should be user-friendly, with clear and intuitive interfaces for uploading data, viewing reports, and changing system settings.
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+CREATE DATABASE IF NOT EXISTS graduation_point_system;
+
+USE graduation_point_system;
+
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50),
+  password VARCHAR(255),
+  access_level INT
+);
+
+CREATE TABLE students (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  studentno VARCHAR(50),
+  firstname VARCHAR(255),
+  middlename VARCHAR(255),
+  lastname VARCHAR(255),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE administrators (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  firstname VARCHAR(255),
+  middlename VARCHAR(255),
+  lastname VARCHAR(255),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE courses (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  courseid VARCHAR(50),
+  coursename VARCHAR(255)
+);
+
+CREATE TABLE results (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  student_id INT,
+  course_id INT,
+  grade VARCHAR(10)
+);
+
+ALTER TABLE results ADD FOREIGN KEY (student_id) REFERENCES students(id);
+ALTER TABLE results ADD FOREIGN KEY (course_id) REFERENCES courses(id);
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+I pasted the code on chatgpt so that it can improve it
+
+CREATE DATABASE IF NOT EXISTS graduation_point_system;
+
+USE graduation_point_system;
+
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50),
+  password VARCHAR(255),
+  access_level INT
+);
+
+CREATE TABLE programs (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  program_code VARCHAR(50),
+  program_name VARCHAR(255)
+);
+
+CREATE TABLE students (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  student_no VARCHAR(50),
+  first_name VARCHAR(255),
+  middle_name VARCHAR(255),
+  last_name VARCHAR(255),
+  program_id INT,
+  FOREIGN KEY (program_id) REFERENCES programs(id)
+);
+
+CREATE TABLE student_programs (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  student_id INT,
+  program_id INT,
+  start_date DATE,
+  end_date DATE,
+  FOREIGN KEY (student_id) REFERENCES students(id),
+  FOREIGN KEY (program_id) REFERENCES programs(id)
+);
+
+CREATE TABLE administrators (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  first_name VARCHAR(255),
+  middle_name VARCHAR(255),
+  last_name VARCHAR(255),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE courses (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  course_code VARCHAR(50),
+  course_name VARCHAR(255),
+  program_id INT,
+  FOREIGN KEY (program_id) REFERENCES programs(id)
+);
+
+CREATE TABLE results (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  student_program_id INT,
+  course_id INT,
+  grade DECIMAL(3,1),
+  entry_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (student_program_id) REFERENCES student_programs(id),
+  FOREIGN KEY (course_id) REFERENCES courses(id),
+  CHECK (grade >= 0 AND grade <= 4.0)
+);
+
+CREATE INDEX idx_results_student_program ON results (student_program_id);
+CREATE INDEX idx_courses_program ON courses (program_id);
+
+

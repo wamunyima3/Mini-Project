@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Plus Registration</title>
+    <link rel="stylesheet" href="./src/css/login.css">
+    <link rel="stylesheet" href="./src/css/logo.css">
+    <link rel="stylesheet" href="./src/css/registration.css">
+</head>
+<body>
+    <header>
+        <a href="./index.html" class="logo"><h1><span>gp</span><strong>A<sup>+</sup></strong></h1></a>
+        <a class="register" href="./login.html" class="register">Login</a>
+    </header>
+    <main>
+        <div class="login">
+            <h1>Register</h1>
+            <form class="registration">
+                <div class="name">
+                    <input class="rImp" type="text" placeholder="Firstname" name="firstname" required>
+                    <input class="rImp" type="text" placeholder="Surname" name="surname" required>
+                </div>
+                <input class="rImp" type="text" placeholder="Email or Phone *" name="email" required>
+                <input class="rImp" type="text" placeholder="User ID *" name="userId" required>
+                <input class="rImp" type="password" placeholder="Password *" name="password" required>
+                <input class="rImp" type="password" placeholder="Confirm password *" name="confirmPassword" required>
+                <div class="gender">
+                        <div><input type="radio"><span>Male</span></div>
+                        <div><input type="radio"><span>Female</span></div>
+                        <div><input type="radio"><span>Other</span></div>      
+                </div>
+                <input class="btn" type="submit" value="REGISTER">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

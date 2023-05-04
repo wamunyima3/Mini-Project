@@ -1,0 +1,11 @@
+.registration{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.gender{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading point system</title>
+    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./src/css/logo.css">
+</head>
+<body>
+    <!-- The Header -->
+    <header>
+        <a href="./index.html" class="logo"><h1><span>gp</span><strong>A<sup>+</sup></strong></h1></a>
+        <nav>
+            <ul class="nav">
+                <a href="./index.html"><li>Home</li></a>
+                <a href="#"><li>Portal</li></a>
+                <a href="./login.html"><li>Login</li></a> 
+            </ul>
+        </nav>
+        <a class="developers" href="./developers.html">Developers</a>
+    </header>
+
+    <!-- The Main Section -->
+    <main>
+        <section class="intro">
+            <div>
+                <h2>Welcome to <span>gp</span><strong>A<sup>+</sup></strong></h2>
+                <p>A grading point average system. Calculate your gpa with a single click.</p>
+                <a class="developers calculate" href="./gpa.html">Calculate</a>
+            </div>
+            <div>
+                <img src="./src/img/images.jpg" alt="#">
+            </div>
+        </section>
+
+        <section class="features">
+            <h1>Features</h1>
+            <div class="container">
+                <div>
+                    <img src="./src/img/excel.jpg" alt="#">
+                </div>
+                <div>
+                    <h2>Uploading a file</h2>
+                    <p>You can upload an excel or csv file that contains courses and their scores from first year to the final year.</p>
+                    <a class="developers download" href="#">Download template</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- The Footer -->
+    <footer>
+        <div>
+            <h4>@ gpA<sup>+</sup>  <span id=year></span></h4>
+            <p>Everything is a seed and what grows is what you planted. <strong>Note</strong> that its calculated from 1<sup>st</sup> year!</p>
+
+        </div>
+        <div class="contact">
+            <a href="#"><img src="./src/img/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="./src/img/twitter.png" alt="twitter"></a>
+            <a href="#"><img src="./src/img/google.png" alt="google"></a>
+        </div>
+    </footer>
+    <!-- Java script to add year -->
+    <script>
+        const yearElement = document.getElementById("year");
+        const currentYear = new Date().getFullYear();
+        yearElement.textContent = currentYear;
+    </script>
+</body>
+</html>

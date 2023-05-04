@@ -1,0 +1,94 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a1a2e;
+    color: #cfe8f6;
+    scroll-behavior: smooth;
+}
+
+/* Logo CSS */
+header{
+    margin: 5rem 0px 5rem 10rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 10%;
+}
+
+.register{
+    margin: 40px 15% 0px 0px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.register:hover{
+    transform: scale(1.2);
+    transition: 0.3s ease-in-out;
+    color: aquamarine;
+    border: 1px solid aquamarine;
+    background-color: #1a1a2e;
+}
+
+/* Login Form Css */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    border: 1px solid #cfe8f6;
+    border-radius: 20px;
+    padding: 50px 60px;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loginForm .container{
+    display: flex;
+    gap: 60px;
+    cursor: pointer;
+}
+
+.container a{
+    color: #cfe8f6;
+    text-decoration: none;
+}
+
+.container a:hover, .rememberMe span:hover{
+    color: aquamarine;
+}
+
+.imp, .rImp{
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid aquamarine;
+    padding: 5px;
+}
+
+.btn{
+    height: 40px;
+    font-size: 18px;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    color: #1a1a2e;
+    font-style: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: 2px solid aquamarine;
+    background-color: #1a1a2e;
+    color: aquamarine;
+    transition: 0.3s ease-in-out;
+}
