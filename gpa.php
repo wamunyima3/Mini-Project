@@ -24,7 +24,7 @@
                         <br>
                         <li>After you have selected your file, the contents of the file will be displayed on the page, verify before you click on upload because you wont be allowed to re-upload or make changes for security issues unless you contact an <a href="#">administrator</a>.</li>
                         <br>
-                        <li><a href="#">How GPA is calculated</a></li>
+                        <li><a href="./how_to.html">How GPA is calculated</a></li>
                     </ul>
                 </p>
                 <br>
