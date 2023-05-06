@@ -34,8 +34,7 @@
 
         <div class="main-content">
             <h1>Program</h1>
-            <?php
-               <table><?php
+            <table><?php
                // (A) PHPSPREADSHEET TO LOAD EXCEL FILE
                require "vendor/autoload.php";
                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
@@ -53,8 +52,7 @@
                  foreach ($cellIterator as $cell) { echo "<td>". $cell->getValue() ."</td>"; }
                  echo "</tr>";
                }
-               ?></table>
-            ?>
+            ?></table>
         </div>
     </main>
 </body>
