@@ -35,15 +35,25 @@
         <div class="main-content">
             <h1>Program</h1>
             <?php
-                require_once "src/excelManagement/Classes/PHPExcel.php";
-
-                $path="test1.xlsx";
-                $reader= PHPExcel_IOFactory::createReaderForFile($path);
-                $excel_Obj = $reader->load($path);
-
-                $worksheet=$excel_Obj->getSheet('0');
-
-                echo $worksheet->getCell('A1')->getValue();
+               <table><?php
+               // (A) PHPSPREADSHEET TO LOAD EXCEL FILE
+               require "vendor/autoload.php";
+               $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+               $spreadsheet = $reader->load("2-demo.xlsx");
+               $worksheet = $spreadsheet->getActiveSheet();
+                
+               // (B) LOOP THROUGH ROWS OF CURRENT WORKSHEET
+               foreach ($worksheet->getRowIterator() as $row) {
+                 // (B1) READ CELLS
+                 $cellIterator = $row->getCellIterator();
+                 $cellIterator->setIterateOnlyExistingCells(false);
+                
+                 // (B2) OUTPUT HTML
+                 echo "<tr>";
+                 foreach ($cellIterator as $cell) { echo "<td>". $cell->getValue() ."</td>"; }
+                 echo "</tr>";
+               }
+               ?></table>
             ?>
         </div>
     </main>
